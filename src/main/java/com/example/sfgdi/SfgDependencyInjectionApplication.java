@@ -16,9 +16,8 @@ public class SfgDependencyInjectionApplication {
 
 		MyController myController = (MyController) ctx.getBean("myController"); //generally classname with first letter small
 
-		String greeting = myController.sayHello();
-
-		System.out.println(greeting);
+		System.out.println("--------primary");
+		System.out.println(myController.sayHello());
 
 		System.out.println("--------property");
 
