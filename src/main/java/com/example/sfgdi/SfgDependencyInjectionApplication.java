@@ -1,6 +1,7 @@
 package com.example.sfgdi;
 
 import com.example.sfgdi.controllers.*;
+import com.example.sfgdi.examplebeans.FakeDataSource;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -13,7 +14,9 @@ public class SfgDependencyInjectionApplication {
 
 		MyController myController = (MyController) ctx.getBean("myController"); //generally classname with first letter small
 
-		System.out.println(myController.sayHello());
+		FakeDataSource fakeDataSource = (FakeDataSource) ctx.getBean(FakeDataSource.class);
+
+		System.out.println(fakeDataSource.getUser());
 	}
 
 }
